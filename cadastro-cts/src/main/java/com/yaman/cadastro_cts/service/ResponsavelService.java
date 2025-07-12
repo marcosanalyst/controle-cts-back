@@ -28,4 +28,9 @@ public class ResponsavelService {
     public void deletar(Long id) {
         responsavelRepository.deleteById(id);
     }
+    public Responsavel update(Long id, Responsavel responsavelAtualizado) {
+        Responsavel existente = buscarPorId(id);
+        existente.setNome(responsavelAtualizado.getNome());
+        return responsavelRepository.save(existente);
+}
 }

@@ -19,7 +19,6 @@ public class Cliente {
     
     private LocalDateTime dataCriacao;
     
- // construtores
     public Cliente() {}
     public Cliente(Long id, String nome, LocalDateTime dataCriacao) {
         this.id = id;
@@ -27,7 +26,6 @@ public class Cliente {
         this.dataCriacao = dataCriacao;
     }
 
-    // getters / setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
