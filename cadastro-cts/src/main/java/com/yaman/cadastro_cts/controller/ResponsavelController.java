@@ -34,4 +34,12 @@ public class ResponsavelController {
     public void deletar(@PathVariable Long id) {
         responsavelService.deletar(id);
     }
+    @PutMapping("/{id}")
+    public Responsavel update(
+        @PathVariable Long id,
+        @RequestBody Responsavel resAtualizado
+    ) {
+        return responsavelService.update(id, resAtualizado);
+    }
+
 }

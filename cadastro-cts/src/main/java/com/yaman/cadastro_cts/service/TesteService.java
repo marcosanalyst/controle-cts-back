@@ -28,4 +28,11 @@ public class TesteService {
     public void deletar(Long id) {
         testeRepository.deleteById(id);
     }
+    public Teste update(Long id, Teste testeAtualizado) {
+        Teste existente = buscarPorId(id);
+        existente.setNome(testeAtualizado.getNome());
+        existente.setEstado(testeAtualizado.getEstado());
+        existente.setImpedimento(testeAtualizado.getImpedimento());
+        return testeRepository.save(existente);
+    }
 }

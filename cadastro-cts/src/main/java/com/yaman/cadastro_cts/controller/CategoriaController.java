@@ -34,4 +34,12 @@ public class CategoriaController {
     public void deletar(@PathVariable Long id) {
         categoriaService.deletar(id);
     }
+
+    @PutMapping("/{id}")
+    public Categoria update(
+        @PathVariable Long id,
+        @RequestBody Categoria catAtualizada
+    ) {
+        return categoriaService.update(id, catAtualizada);
+    }
 }

@@ -28,4 +28,9 @@ public class CategoriaService {
     public void deletar(Long id) {
         categoriaRepository.deleteById(id);
     }
+    public Categoria update(Long id, Categoria categoriaAtualizada) {
+        Categoria existente = buscarPorId(id);
+        existente.setNome(categoriaAtualizada.getNome());
+        return categoriaRepository.save(existente);
+    }
 }

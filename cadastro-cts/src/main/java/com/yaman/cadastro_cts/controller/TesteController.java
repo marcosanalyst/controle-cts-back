@@ -34,4 +34,12 @@ public class TesteController {
     public void deletar(@PathVariable Long id) {
         testeService.deletar(id);
     }
+    @PutMapping("/{id}")
+    public Teste update(
+        @PathVariable Long id,
+        @RequestBody Teste testeAtualizado
+    ) {
+        return testeService.update(id, testeAtualizado);
+    }
+
 }
